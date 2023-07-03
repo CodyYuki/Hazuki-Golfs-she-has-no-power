@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6d62d0d76d8ca554e98a22b284fc818d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - thugCanvas: {fileID: 3264803231034355752, guid: 903ad3148883f45429a5e691421913e4, type: 3}
+  - canvas: {instanceID: 0}
+  - bush: {instanceID: 0}
+  - bush2: {instanceID: 0}
+  - bush3: {instanceID: 0}
+  - bush4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
