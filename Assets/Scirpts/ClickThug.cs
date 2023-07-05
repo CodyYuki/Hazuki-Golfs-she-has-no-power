@@ -7,12 +7,17 @@ public class ClickThug : MonoBehaviour
     public float risetime = 0.3f;
     public float lowertime = 2f;
     public float deletetime = 3f;
+    public GameObject explosion;
 
 
     void OnMouseDown()
     {
+        GameObject explosionclone = Instantiate(explosion) as GameObject;
+        explosionclone.transform.position = transform.position; //new Vector3(0,0,0)
+
         UpdateEXP.money += 1;
         Destroy(gameObject);
+        
     }
 
 
