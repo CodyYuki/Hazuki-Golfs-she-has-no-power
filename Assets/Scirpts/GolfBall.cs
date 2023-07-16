@@ -9,6 +9,7 @@ public class GolfBall : MonoBehaviour
     static public float grv = 2f;
     public GameObject toShopButton;
     public GameObject LaunchButton;
+    public Entity Hazuki;
     
     // Start is called before the first frame update
     void Start()
@@ -46,12 +47,23 @@ public class GolfBall : MonoBehaviour
     }
 
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Entity entity = collision.gameObject.GetComponent<Entity>();
+        if(entity != null)
+        {
+            if(entity.EntityName == "Spring")
+            {
+                hsp = hsp + 10;
+                vsp = vsp + 5;
+            }
+        }
+    }
+
+  
 
     static public float Power = UpdateEXP.levels;
     static public float PowerButVertical = UpdateEXP.levels / 2;
-
-
-
 
 
     public void GolfBallHit()

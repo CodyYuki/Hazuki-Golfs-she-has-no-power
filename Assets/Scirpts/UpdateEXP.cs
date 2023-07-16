@@ -10,7 +10,7 @@ public class UpdateEXP : MonoBehaviour
     // if not using TMP, make line 8 public Text moneyText;
     static public int money;
     static public int expCap = 5;
-    static public float levels = 1;
+    static public float levels = 10;
 
     void Start()
     {
