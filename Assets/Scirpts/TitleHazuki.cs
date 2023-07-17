@@ -5,8 +5,8 @@ using UnityEngine;
 public class TitleHazuki : MonoBehaviour
 {
     
-    public float hsp = 8f;
-    public float xgoal = 920f;
+    public float hsp = 18f;
+    public float xgoal = 820f;
     public float xpos = 2300f;
     public float hspslower = 0.005f;
     // Start is called before the first frame update

@@ -429,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1283.29, y: 540.48}
+  m_AnchoredPosition: {x: -1015, y: 540}
   m_SizeDelta: {x: 385.915, y: 731.207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468001577
@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e09912e77f92040a22183394f07136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hsp: 8
+  hsp: 18
   xgoal: 920
   xpos: 2300
-  hspslower: 0.005
+  hspslower: 0.05
 --- !u!1 &573762885
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +673,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 15.645474
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1572,7 +1572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2541.64, y: 419}
+  m_AnchoredPosition: {x: 2503, y: 466.07}
   m_SizeDelta: {x: 377.46, y: 583.348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956964883
@@ -1587,8 +1587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4c905aa7c5bce43802330c2ac19ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hsp: 8
-  xgoal: 920
+  hsp: 20
+  xgoal: 780.54
   xpos: 2300
   hspslower: 0.005
 --- !u!1 &2109717400

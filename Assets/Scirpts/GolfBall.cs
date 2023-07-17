@@ -9,8 +9,8 @@ public class GolfBall : MonoBehaviour
     static public float grv = 2f;
     public GameObject toShopButton;
     public GameObject LaunchButton;
-    public Entity Hazuki;
-    
+    public bool ButtonActive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +34,14 @@ public class GolfBall : MonoBehaviour
 
     if (!LaunchButton.activeSelf)
     {
-        if (hsp == 0 && vsp == 0)
-        {
-            toShopButton.SetActive(true);
-        }
+        if (ButtonActive == false)
+            {
+                if (hsp == 0 && vsp == 0)
+                {
+                    toShopButton.SetActive(true);
+                }
+            }
+
     }
 
 
@@ -57,6 +61,11 @@ public class GolfBall : MonoBehaviour
                 hsp = hsp + 10;
                 vsp = vsp + 5;
             }
+            if (entity.EntityName == "Vortex")
+            {
+                hsp = hsp + 10;
+                vsp = vsp + 5;
+            }
         }
     }
 
@@ -70,5 +79,6 @@ public class GolfBall : MonoBehaviour
     {
         hsp = Power;
         vsp = PowerButVertical;
+        ButtonActive = false;
     }
 }
