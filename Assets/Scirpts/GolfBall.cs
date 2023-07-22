@@ -11,6 +11,7 @@ public class GolfBall : MonoBehaviour
     public GameObject LaunchButton;
     public bool ButtonActive = true;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class GolfBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hsp -= 0.04f;
+        hsp -= 0.01f;
         if (hsp <= 0)
         {
         hsp = 0;

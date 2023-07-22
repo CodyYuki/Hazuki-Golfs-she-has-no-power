@@ -29,13 +29,16 @@ public class GolfDistance : MonoBehaviour
 
 
 
+
+
         GolfDistanceText.text = "Distance: " + TextUtility.ConvertSecondsToTimeDisplayString(GolfBallCoordinates[0], 0, "", ".");
 
         CashEarenedText.text = "Cash \n$" + CashEarened;
-
-
-
         ShopScript.Cash = CashEarened;
+
+
+
+
 
 
 
