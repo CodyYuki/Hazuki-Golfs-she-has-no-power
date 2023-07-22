@@ -115,5 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risetime: 0.3
+  risedistance: 0.35
+  lowerdistance: -0.23
   lowertime: 2
   deletetime: 2.8
+  explosion: {fileID: 0}

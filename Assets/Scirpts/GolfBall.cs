@@ -32,17 +32,30 @@ public class GolfBall : MonoBehaviour
         vsp = 0;
         }
 
+    // if (!LaunchButton.activeSelf)
+    // {
+    //     if (hsp == 0 && vsp == 0)
+    //     {
+    //      toShopButton.SetActive(true);
+    //     }
+    // }
+
+
+
     if (!LaunchButton.activeSelf)
     {
-        if (ButtonActive == false)
-            {
-                if (hsp == 0 && vsp == 0)
-                {
-                    toShopButton.SetActive(true);
-                }
-            }
-
+        if (hsp >= 0.0001)
+        {
+            ButtonActive = false;
+        }
     }
+
+
+        if (hsp == 0 && vsp == 0 && ButtonActive == false)
+        {
+            toShopButton.SetActive(true);
+        }
+
 
 
         transform.position += new Vector3(hsp, vsp, 0);
@@ -58,13 +71,30 @@ public class GolfBall : MonoBehaviour
         {
             if(entity.EntityName == "Spring")
             {
-                hsp = hsp + 10;
-                vsp = vsp + 5;
+                hsp = hsp + 5;
+                vsp = vsp + 20;
             }
             if (entity.EntityName == "Vortex")
             {
-                hsp = hsp + 10;
+                hsp = hsp + 20;
                 vsp = vsp + 5;
+            }
+            if (entity.EntityName == "Sandpit")
+            {
+                hsp = hsp - 10;
+                vsp = vsp - 5;
+            }
+            if (entity.EntityName == "Speedpad")
+            {
+                hsp = hsp + 10;
+            }
+            if (entity.EntityName == "MoneyCrate")
+            {
+                
+            }
+            if (entity.EntityName == "Bubble")
+            {
+                vsp = vsp + 20;
             }
         }
     }

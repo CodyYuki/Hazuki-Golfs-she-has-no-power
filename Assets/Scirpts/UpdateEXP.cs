@@ -9,8 +9,11 @@ public class UpdateEXP : MonoBehaviour
     public TMP_Text moneyText;
     // if not using TMP, make line 8 public Text moneyText;
     static public int money;
-    static public int expCap = 5;
-    static public float levels = 1;
+    static public int expCap = 3;
+    static public float levels = 10;
+
+    static public int Health = 3;
+    public TMP_Text HealthText;
 
     void Start()
     {
@@ -21,7 +24,7 @@ public class UpdateEXP : MonoBehaviour
     void Update()
     {
         
-        if (money == expCap)
+        if (money >= expCap)
         {
             money = 0;
             levels++;
@@ -31,6 +34,7 @@ public class UpdateEXP : MonoBehaviour
         
         
         moneyText.text = "EXP: " + money + "\n Level: " + levels;
+        HealthText.text = "HP:" + Health;
     }
 
     // public void AddMoney()
