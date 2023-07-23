@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e7133f304c8724799700b350dbc6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopCash: 2000000000
+  ShopCash: 0
   ShopCashText: {fileID: 2007388920}
   IceMagic: {fileID: 672528537}
   ExtraTime: {fileID: 2145500754}

@@ -5,8 +5,8 @@ using TMPro;
 
 public class ShopScript : MonoBehaviour
 {
-    static public int Cash = 0;
-    public int ShopCash = Cash;
+
+    static public float ShopCash = 0;
 
 
     public TMP_Text ShopCashText;
@@ -64,7 +64,7 @@ public class ShopScript : MonoBehaviour
 
     void Start()
     {
-        
+        ShopCash += GolfDistance.CashCollected;
     }
 
 
@@ -105,7 +105,8 @@ public class ShopScript : MonoBehaviour
         BouncierBall.text = "Level: " + BouncierBallLevel;
         StrongerVortex.text = "Level: " + StrongerVortexLevel;
 
-        ShopCashText.text = "Cash \n$" + ShopCash;
+        
+        ShopCashText.text = "Cash \n$" + (int)ShopCash;
     }
 
 

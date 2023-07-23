@@ -1,9 +1,11 @@
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
     public string EntityName;
     public bool PlayOnAwake = true;
+    public bool Disabled = false;
 
 
     private void Awake()
@@ -24,6 +26,14 @@ public class Entity : MonoBehaviour
         if (animator != null)
         {
             animator.speed = speed;
+        }
+    }
+
+    public void DisabledWhenTouchedOnce()
+    {
+        if (!Disabled)
+        {
+           Disabled = true;
         }
     }
 }

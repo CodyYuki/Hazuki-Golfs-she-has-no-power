@@ -91,7 +91,8 @@ public class GolfBall : MonoBehaviour
             }
             if (entity.EntityName == "MoneyCrate")
             {
-                
+                GolfDistance.CashCollected += 20;
+                entity.DisabledWhenTouchedOnce();
             }
             if (entity.EntityName == "Bubble")
             {

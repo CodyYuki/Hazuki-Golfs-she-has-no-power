@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: Vortex
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!50 &144340980
 Rigidbody2D:
   serializedVersion: 4
@@ -692,6 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: Hazuki
   PlayOnAwake: 0
+  Disabled: 0
 --- !u!114 &210024790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,6 +1111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: MoneyCrate
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!50 &621444198
 Rigidbody2D:
   serializedVersion: 4
@@ -1216,7 +1219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621444196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -920, y: 963, z: 0}
+  m_LocalPosition: {x: 320, y: -18, z: 0}
   m_LocalScale: {x: 209.67665, y: 118.75621, z: 93.82651}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1257,6 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: Speedpad
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!50 &638995623
 Rigidbody2D:
   serializedVersion: 4
@@ -1405,6 +1409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: Bubble
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!50 &645377689
 Rigidbody2D:
   serializedVersion: 4
@@ -1640,6 +1645,9 @@ MonoBehaviour:
   CashEarenedText: {fileID: 947351285}
   CashEarened: 20
   GolfBall: {fileID: 548199193}
+  CurrentFrame: 0
+  LastFrame: 0
+  DistanceInBetween: 0
 --- !u!1 &861919070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,7 +2531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219868778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 393, y: -3, z: 0}
+  m_LocalPosition: {x: -288, y: 870, z: 0}
   m_LocalScale: {x: 209.67665, y: 118.75621, z: 93.82651}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2544,6 +2552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: Spring
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!1 &1315463100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,6 +2587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: Sandpit
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!50 &1315463102
 Rigidbody2D:
   serializedVersion: 4
@@ -2949,6 +2959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityName: LaunchButton
   PlayOnAwake: 1
+  Disabled: 0
 --- !u!1 &1832676688
 GameObject:
   m_ObjectHideFlags: 0
