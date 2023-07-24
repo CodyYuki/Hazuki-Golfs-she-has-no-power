@@ -10,7 +10,7 @@ public class GolfBall : MonoBehaviour
     public GameObject toShopButton;
     public GameObject LaunchButton;
     public bool ButtonActive = true;
-
+    public float bubbletime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +62,16 @@ public class GolfBall : MonoBehaviour
         transform.position += new Vector3(hsp, vsp, 0);
 
 
+
+        if (bubbletime > 0)
+        {
+            vsp = vsp + 0.25f;
+            hsp = 4;
+        }
+        bubbletime = bubbletime - 1;
+
+
+
     }
 
 
@@ -72,22 +82,23 @@ public class GolfBall : MonoBehaviour
         {
             if(entity.EntityName == "Spring")
             {
-                hsp = hsp + 5;
+                hsp = 5;
                 vsp = vsp + 20;
             }
             if (entity.EntityName == "Vortex")
             {
-                hsp = hsp + 20;
-                vsp = vsp + 5;
+                hsp = hsp + 10;
+                vsp = 2;
             }
             if (entity.EntityName == "Sandpit")
             {
-                hsp = hsp - 10;
-                vsp = vsp - 5;
+                hsp = hsp - 4;
+                vsp = vsp - 2;
             }
             if (entity.EntityName == "Speedpad")
             {
                 hsp = hsp + 10;
+                vsp = 1;
             }
             if (entity.EntityName == "MoneyCrate")
             {
@@ -96,9 +107,15 @@ public class GolfBall : MonoBehaviour
             }
             if (entity.EntityName == "Bubble")
             {
-                vsp = vsp + 20;
+                bubbletime = 300;
+                entity.DisabledWhenTouchedOnce();
             }
         }
+
+
+
+
+
     }
 
   

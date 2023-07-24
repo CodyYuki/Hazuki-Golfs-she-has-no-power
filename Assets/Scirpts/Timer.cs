@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     {
         if (ShopScript.ExtraTimeLevel >= TempLvlcapTime)
         {
-            time = time + 2 * ShopScript.ExtraTimeLevel;
+            time = 5 + 2 * ShopScript.ExtraTimeLevel;
             TempLvlcapTime++;
         }
 
