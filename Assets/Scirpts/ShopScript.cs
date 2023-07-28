@@ -6,7 +6,7 @@ using TMPro;
 public class ShopScript : MonoBehaviour
 {
 
-    static public float ShopCash = 0;
+    static public float ShopCash = 22222220;
 
 
     public TMP_Text ShopCashText;
@@ -119,6 +119,7 @@ public class ShopScript : MonoBehaviour
             ShopCash = ShopCash - IceMagicPrice;
             IceMagicPrice = IceMagicPrice + 8;
             IceLevel = IceLevel + 1;
+            ClickThug.Speed = ClickThug.Speed - 0.035f;
         }
     }
         public void ExtraText()

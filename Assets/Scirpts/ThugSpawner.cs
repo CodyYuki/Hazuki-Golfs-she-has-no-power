@@ -8,7 +8,7 @@ public class ThugSpawner : MonoBehaviour
     public GameObject Thug;
     //public GameObject canvas;
     public List<GameObject> bushes;
-    public int respawnTime = 1;
+    public float respawnTime = 0.1f;
     public int rollthedice; 
     
 
@@ -59,7 +59,7 @@ public class ThugSpawner : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(respawnTime);
             spawnThug();
         }
     }
