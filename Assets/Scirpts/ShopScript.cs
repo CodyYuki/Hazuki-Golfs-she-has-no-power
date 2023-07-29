@@ -171,6 +171,7 @@ public class ShopScript : MonoBehaviour
             ShopCash = ShopCash - BiggerSpringsPrice;
             BiggerSpringsPrice = BiggerSpringsPrice + 8;
             BiggerSpringsLevel = BiggerSpringsLevel + 1;
+            GolfBall.SpringLvl = GolfBall.SpringLvl + 1;
         }
     }
 
@@ -181,6 +182,7 @@ public class ShopScript : MonoBehaviour
             ShopCash = ShopCash - BouncierBallPrice;
             BouncierBallPrice = BouncierBallPrice + 8;
             BouncierBallLevel = BouncierBallLevel + 1;
+            GolfBall.bounce = GolfBall.bounce + 0.03f;
         }
     }
 
@@ -191,6 +193,7 @@ public class ShopScript : MonoBehaviour
             ShopCash = ShopCash - StrongerVortexPrice;
             StrongerVortexPrice = StrongerVortexPrice + 8;
             StrongerVortexLevel = StrongerVortexLevel + 1;
+            GolfBall.VortexLvl = GolfBall.VortexLvl + 1;
         }
     }
 

@@ -1185,7 +1185,7 @@ MonoBehaviour:
   Timertime: {fileID: 661641469}
   timeUpMessage: {fileID: 440892805}
   continueButton: {fileID: 1431707631}
-  time: 90
+  time: 1
   TempLvlcapTime: 1
 --- !u!1 &1011715293 stripped
 GameObject:
