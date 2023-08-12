@@ -19,7 +19,7 @@ public class UpdateEXP : MonoBehaviour
     static void Init()
     {
         money = 0;
-        levels = 60;
+        levels = 1;
         Health = 3;
     }
 

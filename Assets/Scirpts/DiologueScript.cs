@@ -14,6 +14,11 @@ public class DiologueScript : MonoBehaviour
 
     public int index;
 
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +69,8 @@ public class DiologueScript : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            SceneManager.LoadScene(scenenumber);
+            //SceneManager.LoadScene(scenenumber);
+            FadeOutScript.Singleton.FadeOutTrue = true;
         }
     }
 }
