@@ -7,8 +7,13 @@ public class ButtonScript : MonoBehaviour
 
     public GameObject Dialogue;
     public GameObject Button;
-    static public bool AlreadyShownDialogue = false;
+    static public bool AlreadyShownDialogue;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
+    {
+        AlreadyShownDialogue = false;
+    }
 
     // Start is called before the first frame update
     void Start()

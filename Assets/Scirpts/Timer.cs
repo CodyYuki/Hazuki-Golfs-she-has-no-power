@@ -5,13 +5,20 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    static public float time;
+    static public bool roundStart;
+
     public TMP_Text Timertime;
     public GameObject timeUpMessage;
     public GameObject continueButton;
-    public float time = 5f;
-    static public bool roundStart = false;
-    public float TempLvlcapTime = 1;
+    public float TempLvlcapTime = 0;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
+    {
+        time = 5f; // default 5
+        roundStart = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +31,20 @@ public class Timer : MonoBehaviour
     {
         if (ShopScript.ExtraTimeLevel >= TempLvlcapTime)
         {
-            time = 5 + 2 * ShopScript.ExtraTimeLevel;
+            time = 5 + (2 * ShopScript.ExtraTimeLevel);
             TempLvlcapTime++;
         }
+
+        if (roundStart == false)
+        {
+            UpdateEXP.Health = 3 + ShopScript.MoreMaxHPLevel;
+        }
+    
 
 
         if (roundStart == true)
          {
-            UpdateEXP.Health = 3 + ShopScript.MoreMaxHPLevel;
+            
             if (time > 0)
             {
                 time -= Time.deltaTime;
@@ -41,6 +54,7 @@ public class Timer : MonoBehaviour
                 roundStart = false;
                 timeUpMessage.SetActive(true);
                 continueButton.SetActive(true);
+                time = 5f;
             }
          }
 

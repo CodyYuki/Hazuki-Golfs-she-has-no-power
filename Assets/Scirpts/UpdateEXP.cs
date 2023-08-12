@@ -9,11 +9,19 @@ public class UpdateEXP : MonoBehaviour
     public TMP_Text moneyText;
     // if not using TMP, make line 8 public Text moneyText;
     static public int money;
-    static public int expCap = 3;
-    static public float levels = 10;
+    public int expCap = 3;
+    static public float levels;
 
-    static public int Health = 3;
+    static public int Health;
     public TMP_Text HealthText;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
+    {
+        money = 0;
+        levels = 60;
+        Health = 3;
+    }
 
     void Start()
     {
@@ -28,13 +36,18 @@ public class UpdateEXP : MonoBehaviour
         {
             money = 0;
             levels++;
-            expCap = expCap + ((expCap * 2)/4);
+            expCap = (expCap + 3);
         }
 
         
         
         moneyText.text = "EXP: " + money + "\n Level: " + levels;
         HealthText.text = "HP:" + Health;
+
+        if (Health <= 0)
+        {
+            Timer.time = 0;
+        }
     }
 
     // public void AddMoney()

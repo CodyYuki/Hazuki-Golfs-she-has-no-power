@@ -5,6 +5,8 @@ using TMPro;
 
 public class GolfDistance : MonoBehaviour
 {
+    static public float CashCollected;
+
     public TMP_Text GolfDistanceText;
     public TMP_Text CashEarenedText;
     public int CashEarened = 0;
@@ -21,7 +23,12 @@ public class GolfDistance : MonoBehaviour
     public float CurrentFrame;
     public float LastFrame;
     public float DistanceInBetween;
-    static public float CashCollected;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
+    {
+        CashCollected = 0f;
+    }
 
     private void Start()
     {

@@ -2,32 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class GolfBall : MonoBehaviour
 {
-    public float hsp = 0f;
+    static public float hsp;
+    static public float ground;
+    static public float bounce;
+    static public float SpringLvl;
+    static public float VortexLvl;
+    static public bool AlreadyShownDialogue;
+
     public float vsp = 0f;
     public float grv = 0.1f;
     public GameObject toShopButton;
     public GameObject LaunchButton;
+    public GameObject Diologue;
+    public GameObject BonusCrate;
+    public GameObject Ballimage;
+    public TMP_Text CrateBonusLvlText;
     public bool ButtonActive = true;
     public float bubbletime = 0;
     public float StillTimer = 40;
     public float StillTimerLimit = 40;
-    static public float ground = -67;
-    static public float bounce = 0.2f;
-    static public float SpringLvl = 10;
-    static public float VortexLvl = 10;
 
-    // Start is called before the first frame update
-    void Start()
+    public float Cratebonustime = 0;
+    public float Cratecash = 5;
+    public float CrateBonusLvl = 1;
+
+    public float Power = UpdateEXP.levels;
+    public float PowerButVertical = UpdateEXP.levels;
+
+    // This makes the function run at the start of every play, even in editor
+    // It's required to initialize static things in this function if you have Reload Domain turned off
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
     {
-        
+        hsp = 0f;
+        ground = -67;
+        bounce = 0.2f;
+        SpringLvl = 12;
+        VortexLvl = 10;
+        AlreadyShownDialogue = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Power = UpdateEXP.levels;
+        PowerButVertical = UpdateEXP.levels;
 
         vsp -= grv;
         //transform.position += new Vector3(hsp, vsp, 0);
@@ -35,6 +57,9 @@ public class GolfBall : MonoBehaviour
         transform.Translate(hsp, vsp, 0);
 
         hsp -= 0.02f;
+
+
+
         if (hsp <= 0)
         {
         hsp = 0;
@@ -67,6 +92,7 @@ public class GolfBall : MonoBehaviour
             vsp = 0;
         }
 
+        Ballimage.transform.Rotate(new Vector3(0, 0, hsp * (-1)), Space.Self);
 
         // if (!LaunchButton.activeSelf)
         // {
@@ -92,6 +118,11 @@ public class GolfBall : MonoBehaviour
             StillTimer -= 0.1f;
             if (StillTimer <= 0)
             {
+                if (AlreadyShownDialogue == false)
+                {
+                    Diologue.SetActive(true);
+                    AlreadyShownDialogue = true;
+                }
                 toShopButton.SetActive(true);
                 StillTimer = 0;
             }
@@ -103,8 +134,26 @@ public class GolfBall : MonoBehaviour
         }
 
 
-
-        
+        if (Cratebonustime > 0)
+        {
+            BonusCrate.SetActive(true);
+        }
+        else
+        {
+            BonusCrate.SetActive(false);
+        }
+        Cratebonustime -= 1;
+        if (Cratebonustime <= 0)
+        {
+            Cratebonustime = 0;
+            Cratecash = 5;
+            CrateBonusLvl = 1;
+        }
+        if (CrateBonusLvl >= ShopScript.HigherComboLevel)
+        {
+            CrateBonusLvl = ShopScript.HigherComboLevel;
+        }
+        CrateBonusLvlText.text = "Combo Bonus:\n" + CrateBonusLvl;
 
 
 
@@ -152,7 +201,33 @@ public class GolfBall : MonoBehaviour
             }
             if (entity.EntityName == "MoneyCrate")
             {
-                GolfDistance.CashCollected += 20;
+                GolfDistance.CashCollected += Cratecash;
+                if (Cratebonustime == 0)
+                {
+                    Cratebonustime = 600;
+                    Cratecash += 5;
+                }
+                else
+                {
+                    Cratebonustime = 600;
+                    CrateBonusLvl += 1;
+                    if (CrateBonusLvl == 2)
+                    {
+                        Cratecash += 5;
+                    }
+                    if (CrateBonusLvl == 3)
+                    {
+                        Cratecash += 5;
+                    }
+                    if (CrateBonusLvl == 4)
+                    {
+                        Cratecash += 5;
+                    }
+                    if (CrateBonusLvl == 5)
+                    {
+                        Cratecash += 5;
+                    }
+                }
                 entity.DisabledWhenTouchedOnce();
             }
             if (entity.EntityName == "Bubble")
@@ -170,8 +245,7 @@ public class GolfBall : MonoBehaviour
 
   
 
-    public float Power = UpdateEXP.levels;
-    public float PowerButVertical = UpdateEXP.levels / 2;
+
 
 
     public void GolfBallHit()

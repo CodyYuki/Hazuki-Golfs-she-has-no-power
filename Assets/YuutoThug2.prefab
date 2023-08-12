@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: d83e6f56478e9304882d11b9cac7b414, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aaab3a76f01a11941bb51c1809623a7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +123,6 @@ MonoBehaviour:
   TempLvlcapExp: 1
   SpawnPos: 0
   CurrentPos: 0
-  Speed: 0.8
   Pos: 0
   PosTimer: 20
   Thug: {fileID: 0}
@@ -146,7 +145,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.78, y: 14.89}
+    oldSize: {x: 10.21, y: 14.89}
     newSize: {x: 7.78, y: 14.89}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,5 +167,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityName: Thug
-  PlayOnAwake: 0
+  PlayOnAwake: 1
   Disabled: 0

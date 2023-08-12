@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class ClickThug : MonoBehaviour
 {
@@ -15,13 +11,16 @@ public class ClickThug : MonoBehaviour
 
     public float SpawnPos = 0f;
     public float CurrentPos = 0f;
-    static public float Speed = 0.8f;
+    static public float Speed;
     public float Pos;
     public float PosTimer = 20;
 
 
     public Entity Thug;
 
+
+    Animator ThugAnimator;
+    static public float AnimationSpeedValue;
 
 
     public float TempLvlcapice = 1;
@@ -30,6 +29,13 @@ public class ClickThug : MonoBehaviour
 
 
     public GameObject explosion;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
+    {
+        Speed = 1f;
+        AnimationSpeedValue = 2.8f;
+    }
 
 
     void OnMouseDown()
@@ -47,15 +53,18 @@ public class ClickThug : MonoBehaviour
     private void Start()
     {
         SpawnPos = transform.position.y;
+        ThugAnimator = gameObject.GetComponent<Animator>();
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        TempLvlcapExp = 1 + ShopScript.ExpLevel;
+        TempLvlcapExp = 1 + (2 * ShopScript.ExpLevel);
 
 
-
+        ThugAnimator.speed = AnimationSpeedValue;
 
         //Uses time to call when to go up and down, not the best way to do it but
         //This was what i figured out at the time
@@ -101,7 +110,7 @@ public class ClickThug : MonoBehaviour
         //timer starts,this plays the animation of shooting
         //thenwhen timer is up go back down and delete
 
-        
+
         CurrentPos = transform.position.y;
         Pos = CurrentPos - SpawnPos;
         if (Pos < 6 && PosTimer > 0)
@@ -111,7 +120,7 @@ public class ClickThug : MonoBehaviour
 
         if (Pos >= 6)
         {
-            PosTimer -= 0.1f;
+            PosTimer -= 0.01f;
             
         }
 
@@ -149,9 +158,18 @@ public class ClickThug : MonoBehaviour
 
 
 
-
-
-
-
     }
+
+
+    public void GetHit()
+    {
+        UpdateEXP.Health -= 1;
+    }
+
+    public void Despawn()
+    {
+        Destroy(gameObject);
+    }
+
+
 }
