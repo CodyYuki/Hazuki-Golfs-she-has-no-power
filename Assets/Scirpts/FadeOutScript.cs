@@ -76,6 +76,25 @@ public class FadeOutScript : MonoBehaviour
             }
         }
 
+
+
+        if (FadeOutNumber == "Shop")
+        {
+            if (FadeOutCanvasTrue == true)
+            {
+                xmove -= 1 * Time.deltaTime;
+                if (xmove <= 19.4)
+                {
+                    xmove = 0;
+                    SceneManager.LoadScene(scenenumber);
+                }
+
+                transform.Translate(xmove, 0, 0);
+            }
+        }
+
+
+
     }
 
     public void FadeOut()

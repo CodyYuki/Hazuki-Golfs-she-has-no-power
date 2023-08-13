@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HazukiSwing : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class HazukiSwing : MonoBehaviour
     public void BallHit()
     {
         Golfball.GolfBallHit();
+        if (UpdateEXP.levels >= 200)
+        {
+            SceneManager.LoadScene(4);
+        }
     }    
 
 }

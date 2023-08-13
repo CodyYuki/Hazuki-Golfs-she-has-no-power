@@ -34,8 +34,8 @@ public class CameraZoomOut : MonoBehaviour
 
         if (currentSize < targetSize)
         {
-            cameraSize = 250 + (GolfBall.hsp * 10); ;
-            cameraSize = Mathf.Clamp(cameraSize, 250f, 500f);
+            cameraSize = 25 + (GolfBall.hsp * 10); ;
+            cameraSize = Mathf.Clamp(cameraSize, 25f, 100f);
             //clamp Camerazise -- not bigger than 500 i guess?????????
             //nor smaller than 250;
         }

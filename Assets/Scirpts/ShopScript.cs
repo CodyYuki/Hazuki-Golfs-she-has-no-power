@@ -106,7 +106,7 @@ public class ShopScript : MonoBehaviour
 
         //public float ShopCash = GolfDistance.CashEarened;
 
-        if (ShopUpGrade >= 5)
+        if (ShopUpGrade >= 8)
         {
             ShootingUpgrades.transform.SetPosY(160);
             GolfBallUpgrades.transform.SetPosY(-17);
@@ -154,7 +154,7 @@ public class ShopScript : MonoBehaviour
         if ((ShopCash >= IceMagicPrice) && (IceLevel < 20))
         {
             ShopCash = ShopCash - IceMagicPrice;
-            IceMagicPrice = IceMagicPrice + 2;
+            IceMagicPrice = IceMagicPrice + 4;
             IceLevel = IceLevel + 1;
             ClickThug.Speed -= 0.04f;  //originally 0.035f
             ClickThug.AnimationSpeedValue -= 0.09f;
@@ -166,17 +166,17 @@ public class ShopScript : MonoBehaviour
         if ((ShopCash >= ExtraTimePrice) && (ExtraTimeLevel < 20))
         {
             ShopCash = ShopCash - ExtraTimePrice;
-            ExtraTimePrice = ExtraTimePrice + 2;
+            ExtraTimePrice = ExtraTimePrice + 5;
             ExtraTimeLevel = ExtraTimeLevel + 1;
             ShopUpGrade += 1;
         }
     }
         public void EXPText()
     {
-        if ((ShopCash >= EXPGainPrice) && (ExpLevel < 20))
+        if ((ShopCash >= EXPGainPrice) && (ExpLevel < 10))
         {
             ShopCash = ShopCash - EXPGainPrice;
-            EXPGainPrice = EXPGainPrice + 3;
+            EXPGainPrice = EXPGainPrice + 4;
             ExpLevel = ExpLevel + 1;
             ShopUpGrade += 1;
         }        
@@ -186,7 +186,7 @@ public class ShopScript : MonoBehaviour
         if ((ShopCash >= MoreMaxHPPrice) && (MoreMaxHPLevel < 20))
         {
             ShopCash = ShopCash - MoreMaxHPPrice;
-            MoreMaxHPPrice = MoreMaxHPPrice + 2;
+            MoreMaxHPPrice = MoreMaxHPPrice + 4;
             MoreMaxHPLevel = MoreMaxHPLevel + 1;
             ShopUpGrade += 1;
         }         
@@ -201,7 +201,7 @@ public class ShopScript : MonoBehaviour
         if ((ShopCash >= HigherComboPrice) && (HigherComboLevel < 5))
         {
             ShopCash = ShopCash - HigherComboPrice;
-            HigherComboPrice = HigherComboPrice + 2;
+            HigherComboPrice = HigherComboPrice + 6;
             HigherComboLevel = HigherComboLevel + 1;
             ShopUpGrade += 1;
         }
@@ -212,7 +212,7 @@ public class ShopScript : MonoBehaviour
         if ((ShopCash >= IceMagicPrice) && (BiggerSpringsLevel < 20))
         {
             ShopCash = ShopCash - BiggerSpringsPrice;
-            BiggerSpringsPrice = BiggerSpringsPrice + 3;
+            BiggerSpringsPrice = BiggerSpringsPrice + 2;
             BiggerSpringsLevel = BiggerSpringsLevel + 1;
             GolfBall.SpringLvl = GolfBall.SpringLvl + 1;
             ShopUpGrade += 1;

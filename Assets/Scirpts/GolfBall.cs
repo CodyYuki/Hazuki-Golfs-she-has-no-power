@@ -39,7 +39,7 @@ public class GolfBall : MonoBehaviour
     static void Init()
     {
         hsp = 0f;
-        ground = -67;
+        ground = -80;
         bounce = 0.2f;
         SpringLvl = 12;
         VortexLvl = 10;
@@ -54,7 +54,7 @@ public class GolfBall : MonoBehaviour
         vsp -= grv;
         //transform.position += new Vector3(hsp, vsp, 0);
         //Translate does above ^
-        transform.Translate(hsp, vsp, 0);
+        transform.Translate(hsp/2, vsp/2, 0);
 
         hsp -= 0.02f;
 
@@ -250,8 +250,8 @@ public class GolfBall : MonoBehaviour
 
     public void GolfBallHit()
     {
-        hsp = Power;
-        vsp = PowerButVertical;
+        hsp = Power/2;
+        vsp = PowerButVertical/2;
         ButtonActive = false;
     }
 }
