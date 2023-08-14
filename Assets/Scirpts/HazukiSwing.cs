@@ -14,7 +14,7 @@ public class HazukiSwing : MonoBehaviour
     public void BallHit()
     {
         Golfball.GolfBallHit();
-        if (UpdateEXP.levels >= 200)
+        if (UpdateEXP.levels >= 100)
         {
             SceneManager.LoadScene(4);
         }

@@ -63,7 +63,7 @@ public class GolfDistance : MonoBehaviour
 
 
 
-        CashCollected += DistanceInBetween/100;
+        CashCollected += DistanceInBetween/20;
 
         CashEarenedText.text = "Cash \n$" + (int)CashCollected;
         GolfDistanceText.text = "Distance: " + (int)CashCollected + "ft";

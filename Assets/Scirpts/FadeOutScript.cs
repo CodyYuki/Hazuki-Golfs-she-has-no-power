@@ -66,7 +66,7 @@ public class FadeOutScript : MonoBehaviour
             if (FadeOutCanvasTrue == true)
             {
                 xmove -= 1 * Time.deltaTime;
-                if (xmove <= 19.4)
+                if (xmove <= 18.8)
                 {
                     xmove = 0;
                     SceneManager.LoadScene(scenenumber);

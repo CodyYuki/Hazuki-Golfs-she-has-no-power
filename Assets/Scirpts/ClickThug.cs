@@ -18,14 +18,12 @@ public class ClickThug : MonoBehaviour
 
     public Entity Thug;
 
-
     Animator ThugAnimator;
     static public float AnimationSpeedValue;
 
 
     public float TempLvlcapice = 1;
     //public float TempLvlcapTime = 1;
-
 
 
     public GameObject explosion;
@@ -43,8 +41,9 @@ public class ClickThug : MonoBehaviour
         GameObject explosionclone = Instantiate(explosion) as GameObject;
         explosionclone.transform.position = transform.position; //new Vector3(0,0,0)
 
-
         UpdateEXP.money += TempLvlcapExp;
+
+        PlayHitSound.PlayHit = true;
 
         Destroy(gameObject);
         

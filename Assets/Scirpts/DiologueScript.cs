@@ -69,8 +69,8 @@ public class DiologueScript : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            //SceneManager.LoadScene(scenenumber);
-            FadeOutScript.Singleton.FadeOutTrue = true;
+            SceneManager.LoadScene(scenenumber);
+            //FadeOutScript.Singleton.FadeOutTrue = true;
         }
     }
 }
